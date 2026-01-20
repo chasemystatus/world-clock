@@ -6,27 +6,104 @@
     <link rel="stylesheet" href="src/styles.css" />
     <title>World Clock</title>
   </head>
-  <body>
-    <h1>World Clock</h1>
 
-    <footer>
-      This project was coded by
-      <a
-        href="https://www.shecodes.io/graduates/180037-hayley-walden"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Hayley Walden</a
-      >
-      , is open-sourced on
-      <a
-        href="https://github.com/chasemystatus"
-        target="_blank"
-        rel="noopener noreferrer"
-        >GitHub</a
-      >
-      and hosted by
-      <a href="https://world-clock-73.netlify.app/" target="_blank" rel="noopener noreferrer">Netlify</a>.
-    </footer>
+  <body>
+    <div class="container">
+      <header class="app-header">
+        <h1 class="app-title">World Clock</h1>
+      </header>
+
+      <main class="app">
+        <section class="hero-card" aria-label="Local time">
+          <p class="local-time-label">Your local time</p>
+          <p class="local-timezone" id="local-timezone">Europe/London</p>
+
+          <div class="time-row">
+            <span class="local-time" id="local-time">02:50:11</span>
+            <span class="am-pm" id="am-pm">PM</span>
+          </div>
+
+          <p class="date" id="local-date">Tuesday, January 20, 2026</p>
+        </section>
+
+        <section class="picker" aria-label="Choose a city">
+          <label class="visually-hidden" for="city-select">Choose a city</label>
+          <select class="city-select" id="city-select">
+            <option value="">Select a city...</option>
+            <option value="london">🇬🇧 London</option>
+            <option value="dublin">🇮🇪 Dublin</option>
+            <option value="rhodes">🇬🇷 Rhodes</option>
+            <option value="amsterdam">🇳🇱 Amsterdam</option>
+            <option value="bridgetown">🇧🇧 Bridgetown</option>
+          </select>
+        </section>
+
+        <section class="cards" aria-label="World clocks">
+          <article class="city-card" data-timezone="Europe/London">
+            <div class="city-card-left">
+              <h2 class="city-name">
+                London <span aria-hidden="true">🇬🇧</span>
+              </h2>
+              <p class="subtext-city-date"></p>
+            </div>
+            <div class="city-card-right">
+              <span class="city-time"></span>
+              <span class="city-am-pm"></span>
+            </div>
+          </article>
+
+          <article class="city-card" data-timezone="Europe/London">
+            <div class="city-card-left">
+              <h2 class="city-name">
+                Dublin <span aria-hidden="true">🇮🇪</span>
+              </h2>
+              <p class="subtext-city-date"></p>
+            </div>
+            <div class="city-card-right">
+              <span class="city-time"></span>
+              <span class="city-am-pm"></span>
+            </div>
+          </article>
+
+          <article class="city-card" data-timezone="Europe/London">
+            <div class="city-card-left">
+              <h2 class="city-name">
+                Rhodes <span aria-hidden="true">🇬🇷</span>
+              </h2>
+              <p class="subtext-city-date"></p>
+            </div>
+            <div class="city-card-right">
+              <span class="city-time"></span>
+              <span class="city-am-pm"></span>
+            </div>
+          </article>
+        </section>
+      </main>
+      <footer>
+        This project was coded by
+        <a
+          href="https://www.shecodes.io/graduates/180037-hayley-walden"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Hayley Walden</a
+        >
+        , is open-sourced on
+        <a
+          href="https://github.com/chasemystatus"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >
+        and hosted by
+        <a
+          href="https://world-clock-73.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Netlify</a
+        >.
+      </footer>
+    </div>
+
     <script src="src/index.js"></script>
   </body>
 </html>
