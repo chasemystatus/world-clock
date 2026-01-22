@@ -1,1 +1,19 @@
+.local-timezone:empty::before {
+  content: "Loading timezone...";
+  opacity: 0.7;
+}
 
+.local-time:empty::before {
+  content: "--:--";
+  opacity: 0.7;
+}
+
+.am-pm:empty::before {
+  content: "--";
+  opacity: 0.7;
+}
+
+.date:empty::before {
+  content: "Loading date...";
+  opacity: 0.7;
+}

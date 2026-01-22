@@ -14,36 +14,43 @@
       </header>
 
       <main class="app">
-        <section class="hero-card" aria-label="Local time">
+        <section class="hero-card" aria-labelledby="local-time-heading">
+          <h2 id="local-time-heading" class="visually-hidden">Local time</h2>
           <p class="local-time-label">Your local time</p>
-          <p class="local-timezone" id="local-timezone">Europe/London</p>
+          <p class="local-timezone" id="local-timezone"></p>
 
           <div class="time-row">
-            <span class="local-time" id="local-time">02:50:11</span>
-            <span class="am-pm" id="am-pm">PM</span>
+            <time class="local-time" id="local-time"></time>
+            <span class="am-pm" id="am-pm"></span>
           </div>
 
-          <p class="date" id="local-date">Tuesday, January 20, 2026</p>
+          <time class="date" id="local-date"></time>
         </section>
 
-        <section class="picker" aria-label="Choose a city">
+        <section class="picker" aria-labelledby="choose-city-heading">
+          <h2 id="choose-city-heading" class="visually-hidden">
+            Choose a city
+          </h2>
           <label class="visually-hidden" for="city-select">Choose a city</label>
           <select class="city-select" id="city-select">
             <option value="">Select a city...</option>
-            <option value="london">🇬🇧 London</option>
-            <option value="dublin">🇮🇪 Dublin</option>
-            <option value="rhodes">🇬🇷 Rhodes</option>
-            <option value="amsterdam">🇳🇱 Amsterdam</option>
-            <option value="bridgetown">🇧🇧 Bridgetown</option>
+            <option value="Europe/London">🇬🇧 London</option>
+            <option value="Europe/Dublin">🇮🇪 Dublin</option>
+            <option value="Europe/Athens">🇬🇷 Rhodes</option>
+            <option value="Europe/Amsterdam">🇳🇱 Amsterdam</option>
+            <option value="America/Barbados">🇧🇧 Bridgetown</option>
           </select>
         </section>
 
-        <section class="cards" aria-label="World clocks">
+        <section class="cards" aria-labelledby="world-clocks-heading">
+          <h2 id="world-clocks-heading" class="visually-hidden">
+            World clocks
+          </h2>
           <article class="city-card" data-timezone="Europe/London">
             <div class="city-card-left">
-              <h2 class="city-name">
+              <h3 class="city-name">
                 London <span aria-hidden="true">🇬🇧</span>
-              </h2>
+              </h3>
               <p class="subtext-city-date"></p>
             </div>
             <div class="city-card-right">
@@ -52,11 +59,11 @@
             </div>
           </article>
 
-          <article class="city-card" data-timezone="Europe/London">
+          <article class="city-card" data-timezone="Europe/Dublin">
             <div class="city-card-left">
-              <h2 class="city-name">
+              <h3 class="city-name">
                 Dublin <span aria-hidden="true">🇮🇪</span>
-              </h2>
+              </h3>
               <p class="subtext-city-date"></p>
             </div>
             <div class="city-card-right">
@@ -65,11 +72,11 @@
             </div>
           </article>
 
-          <article class="city-card" data-timezone="Europe/London">
+          <article class="city-card" data-timezone="Europe/Athens">
             <div class="city-card-left">
-              <h2 class="city-name">
+              <h3 class="city-name">
                 Rhodes <span aria-hidden="true">🇬🇷</span>
-              </h2>
+              </h3>
               <p class="subtext-city-date"></p>
             </div>
             <div class="city-card-right">
@@ -104,6 +111,6 @@
       </footer>
     </div>
 
-    <script src="src/index.js"></script>
+    <script src="src/index.js" defer></script>
   </body>
 </html>
