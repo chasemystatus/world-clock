@@ -38,7 +38,6 @@ body {
   border-radius: 12px;
   padding: 18px;
   margin-bottom: 18px;
-  box-shadow:
     rgba(31, 35, 48, 0.1) 0px 4px 6px,
     rgba(31, 35, 48, 0.06) 0px 2px 4px;
 }
@@ -93,7 +92,6 @@ h1 {
 
 .am-pm {
   font-size: 24px;
-  font-weight: 600px;
   font-weight: 600;
 }
 
