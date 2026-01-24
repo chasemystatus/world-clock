@@ -163,6 +163,29 @@ h1 {
     rgba(31, 35, 48, 0.06) 0px 2px 4px;
 }
 
+.subtext-city-date:empty::before {
+  content: "Loading date...";
+  opacity: 0.7;
+  color: #a8afbf;
+  font-size: 13px;
+}
+
+.city-time:empty::before {
+  content: "--:--";
+  opacity: 0.7;
+}
+
+.city-am-pm:empty::before {
+  content: "--";
+  opacity: 0.7;
+}
+
+.city-card-right {
+  min-width: 120px;
+  justify-content: flex-end;
+  text-align: right;
+}
+
 a {
   color: #1f2330;
 }
