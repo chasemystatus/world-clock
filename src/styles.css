@@ -30,22 +30,27 @@ body {
 }
 
 .app-header,
-.hero-card,
-.picker,
-.cards {
+.hero-card {
   background: rgba(255, 255, 255, 0.85);
   border: 1px solid rgba(31, 35, 48, 0.08);
   border-radius: 12px;
   padding: 18px;
   margin-bottom: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .picker {
   background: transparent;
   border: 0;
-  box-shadow: none;
   padding: 0;
   margin-bottom: 18px;
+}
+
+.picker-card {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .cards {
@@ -111,13 +116,11 @@ h1 {
 .city-select {
   width: 100%;
   display: block;
-  padding: 16px 18px;
-  border: 1px solid rgba(31, 35, 48, 0.12);
-  border-radius: 14px;
-  background: #fff;
-  box-shadow:
-    rgba(31, 35, 48, 0.1) 0px 4px 6px,
-    rgba(31, 35, 48, 0.06) 0px 2px 4px;
+  padding: 16px 14px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   font-size: 16px;
   line-height: 24px;
   color: #1f2330;
@@ -125,7 +128,9 @@ h1 {
 
 .city-select:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(216, 27, 134, 0.4);
+  box-shadow:
+    0 6px 18px rgba(216, 27, 134, 0.4),
+    0 0 0 3px rgba(216, 27, 134, 0.4);
 }
 
 .city-card {
@@ -140,7 +145,7 @@ h1 {
   color: #1f2330;
 
   box-shadow:
-    rgba(31, 35, 48, 01) 0px 4px 6px,
+    rgba(31, 35, 48, 0.12) 0px 6px 16px,
     rgba(31, 35, 48, 0.06) 0px 2px 4px;
 }
 
@@ -149,6 +154,7 @@ a {
 }
 
 footer {
+  margin-top: 20px;
   text-align: center;
   color: #1f2330;
   font-size: 16px;
