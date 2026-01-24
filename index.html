@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/styles.css" />
     <title>World Clock</title>
   </head>
@@ -13,6 +16,9 @@
   <body>
     <div class="container">
       <header class="app-header">
+        <span class="app-icon" aria-hidden="true"
+          ><span class="app-emoji">🕒</span></span
+        >
         <h1 class="app-title">World Clock</h1>
       </header>
 
@@ -35,15 +41,17 @@
             Choose a city
           </h2>
           <div class="picker-card">
-          <label class="visually-hidden" for="city-select">Choose a city</label>
-          <select class="city-select" id="city-select">
-            <option value="">Select a city...</option>
-            <option value="Europe/London">🇬🇧 London</option>
-            <option value="Europe/Dublin">🇮🇪 Dublin</option>
-            <option value="Europe/Athens">🇬🇷 Rhodes</option>
-            <option value="Europe/Amsterdam">🇳🇱 Amsterdam</option>
-            <option value="America/Barbados">🇧🇧 Bridgetown</option>
-          </select>
+            <label class="visually-hidden" for="city-select"
+              >Choose a city</label
+            >
+            <select class="city-select" id="city-select">
+              <option value="">Select a city...</option>
+              <option value="Europe/London">🇬🇧 London</option>
+              <option value="Europe/Dublin">🇮🇪 Dublin</option>
+              <option value="Europe/Athens">🇬🇷 Rhodes</option>
+              <option value="Europe/Amsterdam">🇳🇱 Amsterdam</option>
+              <option value="America/Barbados">🇧🇧 Bridgetown</option>
+            </select>
           </div>
         </section>
 
