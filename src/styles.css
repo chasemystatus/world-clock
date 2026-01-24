@@ -10,6 +10,19 @@ body {
   margin: 0;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 .container {
   max-width: 720px;
   margin: 60px auto;
@@ -30,31 +43,19 @@ body {
     rgba(31, 35, 48, 0.06) 0px 2px 4px;
 }
 
+.picker {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 18px;
+}
+
 .cards {
   background: transparent;
   border: 0;
   box-shadow: none;
   padding: 0;
-}
-
-.city-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  background: #fff;
-  border-radius: 12px;
-  padding: 16px 14px;
-  margin-top: 14px;
-
-  box-shadow:
-    rgba(31, 35, 48, 01) 0px,
-    4px,
-    6px,
-    rgba(31, 35, 48, 0.06) 0px,
-    2px,
-    4px;
-  color: #1f2330;
 }
 
 h1 {
@@ -63,19 +64,6 @@ h1 {
   color: #1f2330;
   font-size: 36px;
   font-weight: 700;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
 }
 
 .local-time-label {
@@ -88,14 +76,30 @@ h1 {
   color: #a8afbf;
 }
 
+.local-timezone:empty::before {
+  content: "Loading timezone...";
+  opacity: 0.7;
+}
+
 .local-time {
   font-size: 60px;
   color: #1f2330;
 }
 
+.local-time:empty::before {
+  content: "--:--";
+  opacity: 0.7;
+}
+
 .am-pm {
   font-size: 24px;
   font-weight: 600px;
+  font-weight: 600;
+}
+
+.am-pm:empty::before {
+  content: "--";
+  opacity: 0.7;
 }
 
 .date {
@@ -103,12 +107,9 @@ h1 {
   line-height: 1.5;
 }
 
-.picker {
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  padding: 0;
-  margin-bottom: 18px;
+.date:empty::before {
+  content: "Loading date...";
+  opacity: 0.7;
 }
 
 .city-select {
@@ -131,24 +132,20 @@ h1 {
   box-shadow: 0 0 0 3px rgba(216, 27, 134, 0.4);
 }
 
-.local-timezone:empty::before {
-  content: "Loading timezone...";
-  opacity: 0.7;
-}
+.city-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-.local-time:empty::before {
-  content: "--:--";
-  opacity: 0.7;
-}
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 14px;
+  margin-top: 14px;
+  color: #1f2330;
 
-.am-pm:empty::before {
-  content: "--";
-  opacity: 0.7;
-}
-
-.date:empty::before {
-  content: "Loading date...";
-  opacity: 0.7;
+  box-shadow:
+    rgba(31, 35, 48, 01) 0px 4px 6px,
+    rgba(31, 35, 48, 0.06) 0px 2px 4px;
 }
 
 a {
