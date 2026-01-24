@@ -29,12 +29,46 @@ body {
   padding: 32px;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.app-header,
+.hero-card,
+.city-select,
+.city-card {
+  border: 1px solid rgba(31, 35, 48, 0.08);
+  border-radius: 12px;
+  box-shadow:
+    rgba(31, 35, 48, 0.12) 0px 6px 16px,
+    rgba(31, 35, 48, 0.06) 0px 2px 4px;
+}
+
+.app-header,
+.hero-card,
+.city-select {
+  background: rgba(255, 255, 255, 0.85);
+}
+
 .app-header {
   margin-bottom: 18px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 22px;
 }
 
 .app-icon {
@@ -78,19 +112,68 @@ body {
   background: rgb(216, 27, 134);
 }
 
-.app-header,
 .hero-card {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(31, 35, 48, 0.08);
-  border-radius: 12px;
-  padding: 18px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-}
-
-.app {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 6px;
+  padding: 18px;
+}
+
+.hero-card p,
+.hero-card time {
+  margin: 0;
+}
+
+.local-time-label {
+  font-size: 14px;
+  color: #a8afbf;
+}
+
+.local-timezone {
+  font-size: 12px;
+  color: #a8afbf;
+}
+
+.time-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.local-time {
+  font-size: 52px;
+  color: #1f2330;
+  line-height: 1;
+}
+
+.am-pm {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.date {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.local-timezone:empty::before {
+  content: "Loading timezone...";
+  opacity: 0.7;
+}
+
+.local-time:empty::before {
+  content: "--:--";
+  opacity: 0.7;
+}
+
+.am-pm:empty::before {
+  content: "--";
+  opacity: 0.7;
+}
+
+.date:empty::before {
+  content: "Loading date...";
+  opacity: 0.7;
 }
 
 .picker {
@@ -107,69 +190,11 @@ body {
   box-shadow: none;
 }
 
-.cards {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  padding: 0;
-}
-
-.local-time-label {
-  font-size: 14px;
-  color: #a8afbf;
-}
-
-.local-timezone {
-  font-size: 12px;
-  color: #a8afbf;
-}
-
-.local-timezone:empty::before {
-  content: "Loading timezone...";
-  opacity: 0.7;
-}
-
-.local-time {
-  font-size: 60px;
-  color: #1f2330;
-}
-
-.local-time:empty::before {
-  content: "--:--";
-  opacity: 0.7;
-}
-
-.am-pm {
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.am-pm:empty::before {
-  content: "--";
-  opacity: 0.7;
-}
-
-.date {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.date:empty::before {
-  content: "Loading date...";
-  opacity: 0.7;
-}
-
 .city-select {
   width: 100%;
   display: block;
-  padding: 16px 14px;
-  border: 0;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 12px 14px;
+  border: 0; 
   font-size: 16px;
   line-height: 24px;
   color: #1f2330;
@@ -178,7 +203,8 @@ body {
 .city-select:focus-visible {
   outline: none;
   box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.1),
+    rgba(31, 35, 48, 0.12) 0px 6px 16px,
+    rgba(31, 35, 48, 0.06) 0px 2px 4px,
     0 0 0 3px rgba(216, 27, 134, 0.4);
 }
 
@@ -187,13 +213,9 @@ body {
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  border-radius: 12px;
   padding: 14px 22px;
   margin-top: 0;
   color: #1f2330;
-  box-shadow:
-    rgba(31, 35, 48, 0.12) 0px 6px 16px,
-    rgba(31, 35, 48, 0.06) 0px 2px 4px;
 }
 
 .city-name {
