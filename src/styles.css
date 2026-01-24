@@ -154,13 +154,23 @@ h1 {
 
   background: #fff;
   border-radius: 12px;
-  padding: 16px 14px;
+  padding: 14px 22px;
   margin-top: 0;
   color: #1f2330;
 
   box-shadow:
     rgba(31, 35, 48, 0.12) 0px 6px 16px,
     rgba(31, 35, 48, 0.06) 0px 2px 4px;
+}
+
+.city-name {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.subtext-city-date {
+  margin: 0;
+  line-height: 1.2;
 }
 
 .subtext-city-date:empty::before {
@@ -173,15 +183,30 @@ h1 {
 .city-time:empty::before {
   content: "--:--";
   opacity: 0.7;
+  color: rgb(31, 35, 48);
+  font-weight: 700;
+  font-size: 32px;
 }
 
 .city-am-pm:empty::before {
   content: "--";
   opacity: 0.7;
+  color: #a8afbf;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.city-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .city-card-right {
-  min-width: 120px;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 170px;
   justify-content: flex-end;
   text-align: right;
 }
