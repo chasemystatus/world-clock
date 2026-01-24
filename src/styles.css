@@ -33,16 +33,6 @@ body {
   margin-bottom: 18px;
 }
 
-.app {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.hero-card {
-  margin-bottom: 0;
-}
-
 .app-header,
 .hero-card {
   background: rgba(255, 255, 255, 0.85);
@@ -50,6 +40,12 @@ body {
   border-radius: 12px;
   padding: 18px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .picker {
@@ -157,7 +153,7 @@ h1 {
   background: #fff;
   border-radius: 12px;
   padding: 16px 14px;
-  margin-top: 0px;
+  margin-top: 0;
   color: #1f2330;
 
   box-shadow:
