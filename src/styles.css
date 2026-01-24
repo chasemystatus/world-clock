@@ -54,6 +54,7 @@ body {
     rgba(31, 35, 48, 0.06) 0px,
     2px,
     4px;
+  color: #1f2330;
 }
 
 h1 {
@@ -102,13 +103,32 @@ h1 {
   line-height: 1.5;
 }
 
-select {
-  display: block;
-  padding: 5px 8px;
-  border-radius: 4px;
-  max-width: 100%;
+.picker {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 18px;
+}
 
-  margin: 15px 0;
+.city-select {
+  width: 100%;
+  display: block;
+  padding: 16px 18px;
+  border: 1px solid rgba(31, 35, 48, 0.12);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow:
+    rgba(31, 35, 48, 0.1) 0px 4px 6px,
+    rgba(31, 35, 48, 0.06) 0px 2px 4px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #1f2330;
+}
+
+.city-select:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(216, 27, 134, 0.4);
 }
 
 .local-timezone:empty::before {
@@ -131,6 +151,12 @@ select {
   opacity: 0.7;
 }
 
+a {
+  color: #1f2330;
+}
+
 footer {
   text-align: center;
+  color: #1f2330;
+  font-size: 16px;
 }
