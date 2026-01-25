@@ -59,7 +59,7 @@ body {
 .app-header,
 .hero-card,
 .city-select {
-  background: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 .app-header {
@@ -193,19 +193,23 @@ body {
 .city-select {
   width: 100%;
   display: block;
-  padding: 12px 14px;
+  padding: 12px 44px 12px 14px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='rgba(31,35,48,0.65)' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px 14px;
+
+  cursor: pointer;
   border: 0;
   font-size: 16px;
   line-height: 24px;
   color: #1f2330;
-}
-
-.city-select:focus-visible {
-  outline: none;
-  box-shadow:
-    rgba(31, 35, 48, 0.16) 0px 10px 22px,
-    rgba(31, 35, 48, 0.08) 0px 3px 8px,
-    0 0 0 3px rgba(216, 27, 134, 0.42);
+  background-color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(31, 35, 48, 0.1);
 }
 
 .city-card {
@@ -289,15 +293,23 @@ footer a {
 }
 
 .city-select:hover {
-  background: rgba(255, 255, 255, 0.98);
+  background-color: rgba(255, 255, 255, 0.98);
   transform: translateY(-1px);
   box-shadow:
     rgba(31, 35, 48, 0.14) 0px 10px 22px,
     rgba(31, 35, 48, 0.07) 0px 3px 8px;
 }
 
+.city-select:focus-visible {
+  outline: none;
+  box-shadow:
+    rgba(31, 35, 48, 0.16) 0px 10px 22px,
+    rgba(31, 35, 48, 0.08) 0px 3px 8px,
+    0 0 0 3px rgba(216, 27, 134, 0.42);
+}
+
 .city-select:hover:focus-visible {
-  background: rgba(255, 255, 255, 0.98);
+  background-color: rgba(255, 255, 255, 0.98);
   transform: translateY(-1px);
   box-shadow:
     rgba(31, 35, 48, 0.16) 0px 10px 22px,
