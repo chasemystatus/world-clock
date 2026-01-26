@@ -4,6 +4,8 @@ A simple World Clock web app built as part of the **SheCodes Plus Add-On** cours
 
 ## Live demo
 
+![World Clock screenshot](images/world-clock.png)
+
 - Netlify: https://dev-world-clock-73.netlify.app
 
 ## Screenshot
