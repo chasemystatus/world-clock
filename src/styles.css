@@ -246,6 +246,12 @@ app-emoji path {
   border-color: rgba(31, 35, 48, 0.1);
 }
 
+.cities {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
 .city-card {
   display: flex;
   justify-content: space-between;

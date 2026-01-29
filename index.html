@@ -64,6 +64,7 @@
               <option value="Europe/Athens">🇬🇷 Rhodes</option>
               <option value="Europe/Amsterdam">🇳🇱 Amsterdam</option>
               <option value="America/Barbados">🇧🇧 Bridgetown</option>
+              <option value="America/Los_Angeles">🇺🇸 Los Angeles</option>
             </select>
           </div>
         </section>
@@ -72,48 +73,58 @@
           <h2 id="world-clocks-heading" class="visually-hidden">
             World clocks
           </h2>
-          <article
-            class="city-card"
-            id="london-card"
-            data-timezone="Europe/London"
-          >
-            <div class="city-card-left">
-              <h3 class="city-name">
-                London <span aria-hidden="true">🇬🇧</span>
-              </h3>
-              <p class="subtext-city-date"></p>
-            </div>
-            <div class="city-card-right">
-              <span class="city-time"></span>
-              <span class="city-am-pm"></span>
-            </div>
-          </article>
+          <div id="cities" class="cities">
+            <article
+              class="city-card"
+              id="london-card"
+              data-timezone="Europe/London"
+            >
+              <div class="city-card-left">
+                <h3 class="city-name">
+                  London <span aria-hidden="true">🇬🇧</span>
+                </h3>
+                <p class="subtext-city-date"></p>
+              </div>
+              <div class="city-card-right">
+                <span class="city-time"></span>
+                <span class="city-am-pm"></span>
+              </div>
+            </article>
 
-          <article class="city-card" id="dublin-card" data-timezone="Europe/Dublin">
-            <div class="city-card-left">
-              <h3 class="city-name">
-                Dublin <span aria-hidden="true">🇮🇪</span>
-              </h3>
-              <p class="subtext-city-date"></p>
-            </div>
-            <div class="city-card-right">
-              <span class="city-time"></span>
-              <span class="city-am-pm"></span>
-            </div>
-          </article>
+            <article
+              class="city-card"
+              id="dublin-card"
+              data-timezone="Europe/Dublin"
+            >
+              <div class="city-card-left">
+                <h3 class="city-name">
+                  Dublin <span aria-hidden="true">🇮🇪</span>
+                </h3>
+                <p class="subtext-city-date"></p>
+              </div>
+              <div class="city-card-right">
+                <span class="city-time"></span>
+                <span class="city-am-pm"></span>
+              </div>
+            </article>
 
-          <article class="city-card" id="rhodes-card" data-timezone="Europe/Athens">
-            <div class="city-card-left">
-              <h3 class="city-name">
-                Rhodes <span aria-hidden="true">🇬🇷</span>
-              </h3>
-              <p class="subtext-city-date"></p>
-            </div>
-            <div class="city-card-right">
-              <span class="city-time"></span>
-              <span class="city-am-pm"></span>
-            </div>
-          </article>
+            <article
+              class="city-card"
+              id="rhodes-card"
+              data-timezone="Europe/Athens"
+            >
+              <div class="city-card-left">
+                <h3 class="city-name">
+                  Rhodes <span aria-hidden="true">🇬🇷</span>
+                </h3>
+                <p class="subtext-city-date"></p>
+              </div>
+              <div class="city-card-right">
+                <span class="city-time"></span>
+                <span class="city-am-pm"></span>
+              </div>
+            </article>
+          </div>
         </section>
       </main>
       <footer>
