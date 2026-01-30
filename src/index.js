@@ -1,4 +1,5 @@
 let selectedTimeZone = "";
+let lastRenderedTimeZone = "";
 
 function updateWorldClocks() {
   //London
@@ -56,20 +57,36 @@ function renderSelectedCity() {
     return;
   }
 
-  cityElement.innerHTML = `<article class="city-card"  data-timezone="${cityTimeZone}">
+  let cardElement = cityElement.querySelector(".city-card");
+
+  if (!cardElement || cityTimeZone !== lastRenderedTimeZone) {
+    lastRenderedTimeZone = cityTimeZone;
+   
+
+    cityElement.innerHTML = `<article class="city-card"  data-timezone="${cityTimeZone}">
       <div class="city-card-left">
         <h3 class="city-name">
           ${cityName} 
         </h3>
-        <p class="subtext-city-date">${cityTime.format("MMMM Do YYYY")}</p>
+        <p class="subtext-city-date"></p>
       </div>
       <div class="city-card-right">
-        <span class="city-time">${cityTime.format("h:mm:ss")}</span>
-        <span class="city-am-pm">${cityTime.format("A")}</span>
+        <span class="city-time"></span>
+        <span class="city-am-pm"></span>
       </div>
     </article>`;
-}
 
+    cardElement = cityElement.querySelector(".city-card");
+  }
+
+  let dateElement = cardElement.querySelector(".subtext-city-date");
+  let timeElement = cardElement.querySelector(".city-time");
+  let amPmElement = cardElement.querySelector(".city-am-pm");
+
+  dateElement.innerHTML = cityTime.format("MMMM Do YYYY");
+  timeElement.innerHTML = cityTime.format("h:mm:ss");
+  amPmElement.innerHTML = cityTime.format("A");
+}
 //updateWorldClocks();//
 //setInterval(updateWorldClocks, 1000);//
 
