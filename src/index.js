@@ -3,19 +3,23 @@ let lastRenderedTimeZone = "";
 
 function updateWorldClocks() {
   //London
+
+  let londonElement = document.querySelector("#london-card");
   if (londonElement) {
-    let londonElement = document.querySelector("#london-card");
     let londonDateElement = londonElement.querySelector(".subtext-city-date");
     let londonTimeElement = londonElement.querySelector(".city-time");
     let londonAmPmElement = londonElement.querySelector(".city-am-pm");
+
     let londonTime = moment().tz("Europe/London");
     londonDateElement.innerHTML = londonTime.format("MMMM Do YYYY");
     londonTimeElement.innerHTML = londonTime.format("h:mm:ss");
     londonAmPmElement.innerHTML = londonTime.format("A");
   }
+
   //Dublin
+
+  let dublinElement = document.querySelector("#dublin-card");
   if (dublinElement) {
-    let dublinElement = document.querySelector("#dublin-card");
     let dublinDateElement = dublinElement.querySelector(".subtext-city-date");
     let dublinTimeElement = dublinElement.querySelector(".city-time");
     let dublinAmPmElement = dublinElement.querySelector(".city-am-pm");
@@ -26,8 +30,9 @@ function updateWorldClocks() {
   }
 
   //Rhodes
+
+  let rhodesElement = document.querySelector("#rhodes-card");
   if (rhodesElement) {
-    let rhodesElement = document.querySelector("#rhodes-card");
     let rhodesDateElement = rhodesElement.querySelector(".subtext-city-date");
     let rhodesTimeElement = rhodesElement.querySelector(".city-time");
     let rhodesAmPmElement = rhodesElement.querySelector(".city-am-pm");
@@ -47,22 +52,17 @@ function renderSelectedCity() {
   if (selectedTimeZone === "") {
     return;
   }
-
   let cityTimeZone = selectedTimeZone;
   let cityName = cityTimeZone.split("/")[1].replace(/_/g, " ");
   let cityTime = moment().tz(cityTimeZone);
-
   let cityElement = document.querySelector("#cities");
   if (!cityElement) {
     return;
   }
 
   let cardElement = cityElement.querySelector(".city-card");
-
   if (!cardElement || cityTimeZone !== lastRenderedTimeZone) {
     lastRenderedTimeZone = cityTimeZone;
-   
-
     cityElement.innerHTML = `<article class="city-card"  data-timezone="${cityTimeZone}">
       <div class="city-card-left">
         <h3 class="city-name">
@@ -75,7 +75,6 @@ function renderSelectedCity() {
         <span class="city-am-pm"></span>
       </div>
     </article>`;
-
     cardElement = cityElement.querySelector(".city-card");
   }
 
@@ -87,10 +86,11 @@ function renderSelectedCity() {
   timeElement.innerHTML = cityTime.format("h:mm:ss");
   amPmElement.innerHTML = cityTime.format("A");
 }
-//updateWorldClocks();//
-//setInterval(updateWorldClocks, 1000);//
+updateWorldClocks();
+setInterval(() => {
+  updateWorldClocks();
+  renderSelectedCity();
+}, 1000);
 
 let citySelectElement = document.querySelector("#city-select");
 citySelectElement.addEventListener("change", updateCity);
-
-setInterval(renderSelectedCity, 1000);
