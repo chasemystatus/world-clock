@@ -1,5 +1,11 @@
 let selectedTimeZone = "";
 let lastRenderedTimeZone = "";
+let defaultCitiesHTML = "";
+
+let citiesElement = document.querySelector("#cities");
+if (citiesElement) {
+  defaultCitiesHTML = citiesElement.innerHTML;
+}
 
 function updateWorldClocks() {
   //London
@@ -47,8 +53,16 @@ function updateCity(event) {
   if (event.target.value === "") {
     selectedTimeZone = "";
     lastRenderedTimeZone = "";
+
+    let citiesElement = document.querySelector("#cities");
+    if (citiesElement) {
+      citiesElement.innerHTML = defaultCitiesHTML;
+    }
+
+    updateWorldClocks();
     return;
   }
+
   selectedTimeZone = event.target.value;
   renderSelectedCity();
 }
