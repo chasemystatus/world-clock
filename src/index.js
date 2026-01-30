@@ -44,6 +44,11 @@ function updateWorldClocks() {
 }
 
 function updateCity(event) {
+  if (event.target.value === "") {
+    selectedTimeZone = "";
+    lastRenderedTimeZone = "";
+    return;
+  }
   selectedTimeZone = event.target.value;
   renderSelectedCity();
 }
@@ -86,11 +91,12 @@ function renderSelectedCity() {
   timeElement.innerHTML = cityTime.format("h:mm:ss");
   amPmElement.innerHTML = cityTime.format("A");
 }
+
+let citySelectElement = document.querySelector("#city-select");
+citySelectElement.addEventListener("change", updateCity);
+
 updateWorldClocks();
 setInterval(() => {
   updateWorldClocks();
   renderSelectedCity();
 }, 1000);
-
-let citySelectElement = document.querySelector("#city-select");
-citySelectElement.addEventListener("change", updateCity);
