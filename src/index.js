@@ -7,6 +7,30 @@ if (citiesElement) {
   defaultCitiesHTML = citiesElement.innerHTML;
 }
 
+function updateLocalTime() {
+  let localTimeZoneElement = document.querySelector("#local-timezone");
+  let localTimeElement = document.querySelector("#local-time");
+  let localAmPmElement = document.querySelector("#am-pm");
+  let localDateElement = document.querySelector("#local-date");
+
+  if (
+    !localTimeZoneElement ||
+    !localTimeElement ||
+    !localAmPmElement ||
+    !localDateElement
+  ) {
+    return;
+  }
+
+  let now = moment();
+  let userTimeZone = moment.tz.guess();
+
+  localTimeZoneElement.innerHTML = userTimeZone;
+  localTimeElement.innerHTML = now.format("h:mm:ss");
+  localAmPmElement.innerHTML = now.format("A");
+  localDateElement.innerHTML = now.format("MMMM Do YYYY");
+}
+
 function updateWorldClocks() {
   //London
 
@@ -109,8 +133,11 @@ function renderSelectedCity() {
 let citySelectElement = document.querySelector("#city-select");
 citySelectElement.addEventListener("change", updateCity);
 
+updateLocalTime();
 updateWorldClocks();
+
 setInterval(() => {
+  updateLocalTime();
   updateWorldClocks();
   renderSelectedCity();
 }, 1000);
