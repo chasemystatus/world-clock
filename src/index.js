@@ -10,7 +10,15 @@ let timeZoneToFlag = {
   "America/Barbados": "🇧🇧",
   "America/Los_Angeles": "🇺🇸",
 };
-console.log(timeZoneToFlag["Europe/London"]);
+
+let timeZoneToCityName = {
+  "Europe/London": "London",
+  "Europe/Dublin": "Dublin",
+  "Europe/Athens": "Rhodes",
+  "Europe/Amsterdam": "Amsterdam",
+  "America/Barbados": "Bridgetown",
+  "America/Los_Angeles": "Los Angeles",
+};
 
 let citiesElement = document.querySelector("#cities");
 if (citiesElement) {
@@ -109,7 +117,11 @@ function renderSelectedCity() {
   }
   let cityTimeZone = selectedTimeZone;
   let flag = timeZoneToFlag[cityTimeZone] || "🌍";
-  let cityName = cityTimeZone.split("/")[1].replace(/_/g, " ");
+
+  let cityName =
+    timeZoneToCityName[cityTimeZone] ||
+    cityTimeZone.split("/")[1].replace(/_/g, " ");
+
   let cityTime = moment().tz(cityTimeZone);
   let cityElement = document.querySelector("#cities");
   if (!cityElement) {
