@@ -38,15 +38,21 @@
       <main class="app">
         <section class="hero-card" aria-labelledby="local-time-heading">
           <h2 id="local-time-heading" class="visually-hidden">Local time</h2>
-          <p class="local-time-label">Your local time</p>
-          <p class="local-timezone" id="local-timezone"></p>
 
-          <div class="time-row">
-            <time class="local-time" id="local-time"></time>
-            <span class="am-pm" id="am-pm"></span>
+          <div class="hero-row">
+            <div class="hero-left">
+              <p class="local-time-label">Your local time</p>
+              <p class="local-timezone" id="local-timezone"></p>
+              <time class="date" id="local-date"></time>
+            </div>
+
+            <div class="hero-right">
+            <div class="time-row">
+              <time class="local-time" id="local-time"></time>
+              <span class="am-pm" id="am-pm"></span>
+              </div>
+            </div>
           </div>
-
-          <time class="date" id="local-date"></time>
         </section>
 
         <section class="picker" aria-labelledby="choose-city-heading">

@@ -142,6 +142,27 @@ app-emoji path {
   padding: 18px;
 }
 
+.hero-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero-right {
+  text-align: right;
+}
+
+.hero-right .time-row {
+  justify-content: flex-end;
+}
+
 .hero-card p,
 .hero-card time {
   margin: 0;
@@ -397,9 +418,58 @@ footer a:focus-visible {
   .local-time {
     font-size: 44px;
   }
+  .hero-row {
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  .hero-right {
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .hero-right {
+    width: 100%;
+    text-align: left;
+  }
+
+  .hero-right .time-row {
+    justify-content: flex-start;
+  }
+
+  .local-time {
+    font-size: 44px;
+  }
 }
 
 @media (max-width: 360px) {
+  .hero-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .hero-right {
+    width: 100%;
+    text-align: left;
+  }
+
+  .hero-card {
+    padding: 14px;
+  }
+
+  .local-time {
+    font-size: 40px;
+  }
+
   .city-card {
     padding: 12px 16px;
   }
