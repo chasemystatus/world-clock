@@ -501,3 +501,17 @@ footer a:focus-visible {
     font-size: 14px;
   }
 }
+
+@media (max-width: 340px) {
+  .city-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .city-card-right {
+    width: 100;
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
