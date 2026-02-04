@@ -189,7 +189,7 @@ app-emoji path {
 
 .local-time {
   font-size: 52px;
-  color: #1f2330;
+  color: rgba(31, 35, 48, 0.9);
   line-height: 1;
 }
 
@@ -203,6 +203,7 @@ app-emoji path {
 .date {
   font-size: 14px;
   color: rgba(31, 35, 48, 0.7);
+  font-weight: 600;
   line-height: 1.3;
 }
 
@@ -223,6 +224,7 @@ app-emoji path {
 
 .date:empty::before {
   content: "Loading date...";
+  font-weight: 600;
   opacity: 0.7;
 }
 
@@ -286,7 +288,7 @@ app-emoji path {
   background: #fff;
   padding: 14px 22px;
   margin-top: 0;
-  color: #1f2330;
+  color: rgba(31, 35, 48, 0.9);
 }
 
 .city-name {
@@ -298,6 +300,7 @@ app-emoji path {
   margin: 0;
   font-size: 14px;
   color: rgba(31, 35, 48, 0.7);
+  font-weight: 600;
   line-height: 1.3;
 }
 
@@ -312,6 +315,7 @@ app-emoji path {
   font-size: 32px;
   font-weight: 500;
   line-height: 1;
+  color: rgba(31, 35, 48, 0.9);
 }
 
 .city-am-pm {
