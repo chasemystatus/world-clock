@@ -112,9 +112,19 @@ function updateCity(event) {
 }
 
 function renderSelectedCity() {
-  if (selectedTimeZone === "") {
+  let cityElement = document.querySelector("#cities");
+  if (!cityElement) {
     return;
   }
+
+  if (selectedTimeZone === "") {
+    if(lastRenderedTimeZone !== "") {
+      cityElement.innerHTML = defaultCitiesHTML;
+      lastRenderedTimeZone = "";
+    }
+    return;
+  }
+
   let cityTimeZone = selectedTimeZone;
   let flag = timeZoneToFlag[cityTimeZone] || "🌍";
 
@@ -123,10 +133,6 @@ function renderSelectedCity() {
     cityTimeZone.split("/")[1].replace(/_/g, " ");
 
   let cityTime = moment().tz(cityTimeZone);
-  let cityElement = document.querySelector("#cities");
-  if (!cityElement) {
-    return;
-  }
 
   let cardElement = cityElement.querySelector(".city-card");
   if (!cardElement || cityTimeZone !== lastRenderedTimeZone) {
@@ -154,13 +160,19 @@ function renderSelectedCity() {
   let timeElement = cardElement.querySelector(".city-time");
   let amPmElement = cardElement.querySelector(".city-am-pm");
 
+  if (!dateElement || !timeElement || !amPmElement) {
+    return;
+  }
+
   dateElement.innerHTML = cityTime.format("MMMM Do YYYY");
   timeElement.innerHTML = cityTime.format("h:mm:ss");
   amPmElement.innerHTML = cityTime.format("A");
 }
 
 let citySelectElement = document.querySelector("#city-select");
-citySelectElement.addEventListener("change", updateCity);
+if (citySelectElement) {
+  citySelectElement.addEventListener("change", updateCity);
+}
 
 updateLocalTime();
 updateWorldClocks();
