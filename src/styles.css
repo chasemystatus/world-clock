@@ -355,6 +355,27 @@ app-emoji path {
   text-align: right;
 }
 
+.back-row {
+  text-align: center;
+  margin: 12px 0 0;
+}
+
+.back-link {
+  color: rgb(216, 27, 134);
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.back-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
 a {
   color: #1f2330;
 }

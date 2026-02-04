@@ -142,7 +142,11 @@ function renderSelectedCity() {
         <span class="city-time"></span>
         <span class="city-am-pm"></span>
       </div>
-    </article>`;
+      
+    </article>
+    <p class="back-row">
+       <a class="back-link" href="./index.html">← Back to homepage</a>
+       </p>`;
     cardElement = cityElement.querySelector(".city-card");
   }
 
