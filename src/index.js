@@ -25,12 +25,12 @@ if (citiesContainer) {
   defaultCitiesHTML = citiesContainer.innerHTML;
 }
 
-function updateLocalTime() {
-  let localTimeZoneElement = document.querySelector("#local-timezone");
-  let localTimeElement = document.querySelector("#local-time");
-  let localAmPmElement = document.querySelector("#am-pm");
-  let localDateElement = document.querySelector("#local-date");
+let localTimeZoneElement = document.querySelector("#local-timezone");
+let localTimeElement = document.querySelector("#local-time");
+let localAmPmElement = document.querySelector("#am-pm");
+let localDateElement = document.querySelector("#local-date");
 
+function updateLocalTime() {
   if (
     !localTimeZoneElement ||
     !localTimeElement ||
