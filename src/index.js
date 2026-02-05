@@ -21,8 +21,8 @@ let timeZoneToCityName = {
 };
 
 let citiesContainer = document.querySelector("#cities");
-if (citiesCpontainer) {
-  defaultCitiesHTML = citiesContaner.innerHTML;
+if (citiesContainer) {
+  defaultCitiesHTML = citiesContainer.innerHTML;
 }
 
 function updateLocalTime() {
