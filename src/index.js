@@ -20,9 +20,9 @@ let timeZoneToCityName = {
   "America/Los_Angeles": "Los Angeles",
 };
 
-let citiesElement = document.querySelector("#cities");
-if (citiesElement) {
-  defaultCitiesHTML = citiesElement.innerHTML;
+let citiesContainer = document.querySelector("#cities");
+if (citiesCpontainer) {
+  defaultCitiesHTML = citiesContaner.innerHTML;
 }
 
 function updateLocalTime() {
@@ -98,9 +98,8 @@ function updateCity(event) {
     selectedTimeZone = "";
     lastRenderedTimeZone = "";
 
-    let citiesElement = document.querySelector("#cities");
-    if (citiesElement) {
-      citiesElement.innerHTML = defaultCitiesHTML;
+    if (citiesContainer) {
+      citiesContainer.innerHTML = defaultCitiesHTML;
     }
 
     updateWorldClocks();
@@ -112,13 +111,13 @@ function updateCity(event) {
 }
 
 function renderSelectedCity() {
-  let cityElement = document.querySelector("#cities");
+  let cityElement = citiesContainer;
   if (!cityElement) {
     return;
   }
 
   if (selectedTimeZone === "") {
-    if(lastRenderedTimeZone !== "") {
+    if (lastRenderedTimeZone !== "") {
       cityElement.innerHTML = defaultCitiesHTML;
       lastRenderedTimeZone = "";
     }
