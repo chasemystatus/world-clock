@@ -20,6 +20,12 @@ let timeZoneToCityName = {
   "America/Los_Angeles": "Los Angeles",
 };
 
+let userTimeZone = moment.tz.guess();
+let localFlag = timeZoneToFlag[userTimeZone] || "🌍";
+let localCityName = userTimeZone.includes("/")
+? userTimeZone.split("/")[1].replace(/_/g, " ")
+: userTimeZone;
+
 let citiesContainer = document.querySelector("#cities");
 if (citiesContainer) {
   defaultCitiesHTML = citiesContainer.innerHTML;
@@ -41,9 +47,6 @@ function updateLocalTime() {
   }
 
   let now = moment();
-  let userTimeZone = moment.tz.guess();
-  let localFlag = timeZoneToFlag[userTimeZone] || "🌍";
-  let localCityName = userTimeZone.split("/")[1].replace(/_/g, " ");
 
   localTimeZoneElement.innerHTML = `${localCityName} <span aria-hidden="true">${localFlag}</span>`;
   localTimeElement.innerHTML = now.format("h:mm:ss");
