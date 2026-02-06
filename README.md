@@ -4,8 +4,6 @@ A simple World Clock web app built as part of the **SheCodes Plus Add-On** cours
 
 ## Live demo
 
-## Live demo
-
 - Netlify: https://world-clock-73.netlify.app/
 
 ## Source code
@@ -15,9 +13,11 @@ A simple World Clock web app built as part of the **SheCodes Plus Add-On** cours
 ## Screenshots
 
 Default view:
+
 ![World Clock default view](images/world-clock-default.png)
 
 Selected city view:
+
 ![World Clock selected city view](images/world-clock-selected.png)
 
 ## Features
@@ -31,8 +31,9 @@ Selected city view:
 
 - HTML
 - CSS (Flexbox, media queries)
-- JavaScript (in progress / next step)
-- Moment.js + Moment Timezone (if/when added in the JS step)
+- JavaScript
+- Moment.js
+- Moment Timezone
 
 ## Accessibility notes
 
@@ -42,13 +43,17 @@ Selected city view:
 
 ## Project structure
 
+```text
 world-clock/
 ├─ index.html
+├─ README.md
+├─ images/
+│  ├─ world-clock-default.png
+│  └─ world-clock-selected.png
 └─ src/
-├─ styles.css
-└─ index.js
-└─ images/
-└─ world-clock.png
+   ├─ styles.css
+   └─ index.js
+```
 
 ## Run locally
 
@@ -60,12 +65,6 @@ world-clock/
 
 1. Install the **Live Server** extension.
 2. Right-click `index.html` → **Open with Live Server**.
-
-## Roadmap (next)
-
-- Hook up city selection in JS and update the selected city display
-- Add “selected city” styling (pink accent) via a class toggled in JS
-- (Optional) Add `aria-live="polite"` to dynamic time/date containers
 
 ## Credits
 
