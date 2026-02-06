@@ -4,13 +4,21 @@ A simple World Clock web app built as part of the **SheCodes Plus Add-On** cours
 
 ## Live demo
 
-![World Clock screenshot](images/world-clock.png)
+## Live demo
 
-- Netlify: https://dev-world-clock-73.netlify.app
+- Netlify: https://world-clock-73.netlify.app/
 
-## Screenshot
+## Source code
 
-![World Clock screenshot](images/world-clock.png)
+- GitHub: https://github.com/chasemystatus/world-clock
+
+## Screenshots
+
+Default view:
+![World Clock default view](images/world-clock-default.png)
+
+Selected city view:
+![World Clock selected city view](images/world-clock-selected.png)
 
 ## Features
 
